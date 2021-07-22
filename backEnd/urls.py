@@ -14,8 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from sandbox_game import api
+
+apiPatterns = [
+    # user
+    path('login/', api.user_login),
+    path('autoLogin/', api.user_auto_login),
+    path('register/', api.user_register),
+    path('logout/', api.user_logout),
+]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('api/', include(apiPatterns)),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + \
+    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

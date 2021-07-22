@@ -76,16 +76,12 @@ WSGI_APPLICATION = 'backEnd.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'theFirst',
-            'USER': 'root',
-            'PASSWORD': '123456789',
-            'HOST': '127.0.0.1',
-            'PORT': '3306'
-        }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'SandBox',
+        'USER': 'root',
+        'PASSWORD': '123456789',
+        'HOST': '127.0.0.1',
+        'PORT': '3306'
     }
 }
 
@@ -110,9 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -124,6 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/upload/'
 
 # 跨域增加忽略
 CORS_ALLOW_CREDENTIALS = True
