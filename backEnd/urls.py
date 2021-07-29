@@ -17,14 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from sandbox_game import api
+from sandbox_game.api import loginApi, gameApi
 
 apiPatterns = [
     # user
-    path('login/', api.user_login),
-    path('autoLogin/', api.user_auto_login),
-    path('register/', api.user_register),
-    path('logout/', api.user_logout),
+    path('login/', loginApi.user_login),
+    path('autoLogin/', loginApi.user_auto_login),
+    path('register/', loginApi.user_register),
+    path('logout/', loginApi.user_logout),
+
+    path('submit/', gameApi.submit)
 ]
 
 urlpatterns = [

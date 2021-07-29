@@ -71,7 +71,8 @@ def user_register(request):
 @api_view(['POST'])
 def user_logout(request):
     print(request.POST)
-    # token = request.POST['token']
-    # user_token = Token.objects.get(key=token)
-    # user_token.delete()
+    token = request.POST['token']
+    user_token = Token.objects.get(key=token)
+    user_token.delete()
     return Response('logout')
+
