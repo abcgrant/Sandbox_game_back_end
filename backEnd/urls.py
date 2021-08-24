@@ -26,7 +26,8 @@ apiPatterns = [
     path('register/', loginApi.user_register),
     path('logout/', loginApi.user_logout),
 
-    path('submit/', gameApi.submit)
+    path('submit/', gameApi.submit),
+    path('refreshAndSubmit/', gameApi.refreshAndSubmit)
 ]
 
 urlpatterns = [

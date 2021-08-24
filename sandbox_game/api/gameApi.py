@@ -13,9 +13,16 @@ def submit(request):
     player = Player(playerName=userToken.user.username, teamName=teamName, gameID=gameID)
     player.save()
     data = {
+        'status': 200,
         'username': userToken.user.username,
         'userid': userToken.user_id,
         'gameID': gameID,
         'teamName': teamName,
     }
     return Response(data)
+
+
+@api_view(['POST'])
+def refreshAndSubmit(request):
+    print(request.POST)
+    return Response(1)
